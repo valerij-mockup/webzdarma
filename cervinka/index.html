@@ -5,685 +5,458 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Červinka Cosmetics — Permanentní make-up · Vrchlabí</title>
   <meta name="description" content="Diskrétní studio ve Vrchlabí. Permanentní make-up, mezoterapie, kyslíková terapie.">
-  <meta name="theme-color" content="#fbf9f5" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#FAF7F2">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="format-detection" content="telephone=no">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.squarespace-cdn.com">
   <link rel="preload" as="image" href="https://images.squarespace-cdn.com/content/v1/648347cae7de887c45e98e38/4ebf3f9a-de33-464d-8adc-087200f29e3b/VAL_1512.jpg" fetchpriority="high">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Inter:wght@300;400;500;600&family=Fragment+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fbf9f5;
-      --bg-card: #ffffff;
-      --bg-sage: #f0f4ef;
-      --bg-sage-deep: #E6E3E0;
-      --bg-dark: #0f0f0f;
-      --text: #0f0f0f;
-      --text-soft: #4d5249;
-      --text-muted: #858585;
-      --olive: #4d524a;
-      --olive-deep: #262924;
-      --sage-mid: #a3a8a0;
-      --pink: #DE0F72;
-      --pink-soft: #DE0F7218;
-      --yellow: #FFB701;
-      --hairline: #00000010;
+      --bg: #FAF7F2;
+      --bg-dark: #0A0A0A;
+      --text: #0A0A0A;
+      --text-soft: #555048;
+      --text-muted: #8A847B;
+      --champagne: #B89968;
+      --hairline: rgba(10, 10, 10, 0.12);
+      --hairline-light: rgba(10, 10, 10, 0.07);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     *, *::before, *::after { -webkit-tap-highlight-color: transparent; }
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-      text-size-adjust: 100%;
-    }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
       background: var(--bg);
       color: var(--text);
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      font-weight: 400;
-      font-size: 16px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-weight: 300;
+      font-size: 15px;
       line-height: 1.55;
+      letter-spacing: 0;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       overflow-x: hidden;
-      overscroll-behavior-y: none;
     }
     a, button { touch-action: manipulation; }
+    img { max-width: 100%; height: auto; display: block; }
+    @supports (padding: max(0px)) {
+      body { padding-bottom: env(safe-area-inset-bottom); }
+    }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after {
         animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
       }
     }
-    img { max-width: 100%; height: auto; }
-    /* iOS safe area */
-    @supports (padding: max(0px)) {
-      body { padding-bottom: env(safe-area-inset-bottom); }
-    }
 
     h1, h2, h3 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-weight: 500;
-      letter-spacing: -0.02em;
+      font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+      font-weight: 300;
+      letter-spacing: -0.005em;
       line-height: 1;
     }
 
-    .mono {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.04em;
+    .small-caps {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       font-weight: 400;
+      color: var(--text-muted);
     }
 
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
 
-    /* NAV — pill on top */
+    /* NAV — symmetric centered, very luxurious */
     nav {
       position: fixed;
-      top: 16px; left: 50%;
-      transform: translateX(-50%);
+      top: 0; left: 0; right: 0;
       z-index: 100;
-      width: calc(100% - 32px);
-      max-width: 1320px;
-      padding: 14px 22px 14px 28px;
-      background: #ffffffeb;
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--hairline);
-      border-radius: 999px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 22px;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-    }
-    nav .brand-dot {
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--pink);
-    }
-    nav .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-    }
-    nav .nav-links a {
-      font-size: 14px;
-      color: var(--text-soft);
-      transition: color 0.2s;
-    }
-    nav .nav-links a:hover { color: var(--pink); }
-    nav .nav-cta {
-      background: var(--bg-dark);
-      color: #fff;
-      padding: 11px 22px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-    }
-    nav .nav-cta:hover { background: var(--pink); }
-    nav .nav-cta .dot {
-      width: 6px; height: 6px;
-      background: var(--pink);
-      border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
-    }
-    nav .nav-cta:hover .dot { background: #fff; }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.85); }
-    }
-
-    /* HERO */
-    .hero {
-      padding: 120px 24px 60px;
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-    .hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--hairline);
-      border-radius: 999px;
-      color: var(--text-soft);
-      margin-bottom: 36px;
-      font-size: 13px;
-    }
-    .hero-eyebrow::before {
-      content: '✦';
-      color: var(--pink);
-      font-size: 14px;
-    }
-    .hero h1 {
-      font-size: clamp(64px, 11vw, 180px);
-      font-weight: 500;
-      line-height: 0.95;
-      letter-spacing: -0.035em;
-      max-width: 1200px;
-      margin-bottom: 32px;
-    }
-    .hero h1 em {
-      font-style: italic;
-      color: var(--pink);
-      font-weight: 500;
-    }
-    .hero-sub {
-      font-size: clamp(18px, 1.6vw, 22px);
-      color: var(--text-soft);
-      max-width: 580px;
-      margin-bottom: 48px;
-      line-height: 1.45;
-    }
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 64px;
-    }
-    .btn-primary {
-      background: var(--bg-dark);
-      color: #fff;
-      padding: 18px 32px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      transition: all 0.3s ease;
-    }
-    .btn-primary:hover { background: var(--pink); }
-    .btn-primary::after {
-      content: '↗';
-      font-size: 18px;
-      transition: transform 0.3s;
-    }
-    .btn-primary:hover::after { transform: rotate(45deg); }
-    .btn-ghost {
-      padding: 18px 28px;
-      border-radius: 999px;
-      border: 1px solid var(--hairline);
-      background: var(--bg-card);
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text);
-      transition: all 0.3s ease;
-    }
-    .btn-ghost:hover {
-      border-color: var(--pink);
-      color: var(--pink);
-    }
-
-    /* HERO 2-COL: image + trust card */
-    .hero-grid {
+      padding: 24px 40px;
       display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 16px;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--hairline-light);
     }
-    .hero-img-card {
-      border-radius: 32px;
-      overflow: hidden;
-      background: var(--bg-sage);
-      position: relative;
-      min-height: 540px;
+    nav .nav-left, nav .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 28px;
     }
-    .hero-img-card img {
-      width: 100%;
-      height: 100%;
-      min-height: 540px;
-      object-fit: cover;
-    }
-    .hero-img-card::after {
-      content: '';
-      position: absolute;
-      bottom: 24px; left: 24px;
-      width: 56px; height: 56px;
-      border-radius: 50%;
-      background: var(--pink);
-      box-shadow: 0 8px 32px rgba(222, 15, 114, 0.3);
-    }
-    .hero-img-card .badge {
-      position: absolute;
-      top: 24px; right: 24px;
-      background: #ffffffeb;
-      backdrop-filter: blur(12px);
-      padding: 12px 18px;
-      border-radius: 999px;
-      font-family: 'Fragment Mono', monospace;
+    nav .nav-right { justify-content: flex-end; }
+    nav .nav-link {
       font-size: 11px;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.22em;
       text-transform: uppercase;
       color: var(--text);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      transition: color 0.4s ease;
     }
-    .hero-img-card .badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--pink);
-      border-radius: 50%;
+    nav .nav-link:hover { color: var(--champagne); }
+    nav .brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
-
-    .hero-side {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .hero-side-card {
-      background: var(--bg-card);
-      border: 1px solid var(--hairline);
-      border-radius: 32px;
-      padding: 28px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 24px;
-    }
-    .hero-side-card.dark {
-      background: var(--olive-deep);
-      color: #fff;
-      border: none;
-    }
-    .hero-side-label {
+    nav .brand-sub {
+      display: block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      letter-spacing: 0.3em;
       color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-    .hero-side-card.dark .hero-side-label { color: var(--pink); }
-    .hero-side-quote {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
-      line-height: 1.25;
-      letter-spacing: -0.015em;
-      font-weight: 500;
-    }
-    .hero-side-quote em { font-style: italic; color: var(--pink); }
-    .hero-side-foot {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-    }
-    .hero-side-foot .stars { color: var(--yellow); font-size: 16px; letter-spacing: 0.05em; }
-    .hero-side-foot .num {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
+      margin-top: 2px;
+      text-align: center;
     }
 
-    /* TRUST STRIP */
-    .trust {
-      max-width: 1320px;
+    /* HERO — restrained centered */
+    .hero {
+      padding: 180px 40px 100px;
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px 80px;
+      text-align: center;
     }
-    .trust-grid {
-      background: var(--bg-card);
-      border: 1px solid var(--hairline);
-      border-radius: 32px;
-      padding: 40px 48px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
+    .hero-eyebrow {
+      margin-bottom: 48px;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 16px;
+      color: var(--text-soft);
+      font-weight: 400;
     }
-    .trust-item {
-      display: flex;
-      gap: 20px;
-      align-items: center;
+    .hero h1 {
+      font-size: clamp(60px, 11vw, 168px);
+      font-weight: 300;
+      line-height: 0.95;
+      letter-spacing: -0.018em;
+      margin-bottom: 64px;
     }
-    .trust-item:not(:last-child) { border-right: 1px solid var(--hairline); padding-right: 32px; }
-    .trust-value {
-      font-family: 'Playfair Display', serif;
-      font-size: 56px;
-      font-weight: 500;
-      letter-spacing: -0.025em;
-      line-height: 1;
+    .hero h1 em { font-style: italic; }
+    .hero h1 .thin { font-weight: 300; }
+
+    /* Square portrait — small, centered */
+    .hero-portrait {
+      width: 320px;
+      max-width: 80vw;
+      aspect-ratio: 1 / 1;
+      margin: 0 auto 56px;
+      overflow: hidden;
+      background: var(--bg-dark);
+      filter: grayscale(0.15);
+    }
+    .hero-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 28%;
+      transition: transform 6s ease;
+    }
+    .hero-portrait:hover img { transform: scale(1.04); }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(22px, 2.4vw, 32px);
+      font-weight: 300;
       color: var(--text);
-      flex-shrink: 0;
+      max-width: 720px;
+      margin: 0 auto 56px;
+      line-height: 1.35;
+      letter-spacing: -0.005em;
     }
-    .trust-text { display: flex; flex-direction: column; gap: 4px; }
-    .trust-label { color: var(--pink); }
-    .trust-sub { color: var(--text-muted); font-size: 14px; }
 
-    /* SECTION INTRO */
-    .section-intro {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 80px 24px 60px;
-    }
-    .section-eyebrow {
+    .hero-cta {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 16px;
-      background: var(--bg-card);
-      border: 1px solid var(--hairline);
-      border-radius: 999px;
-      color: var(--text-soft);
-      margin-bottom: 32px;
-      font-size: 13px;
-    }
-    .section-eyebrow::before { content: '✦'; color: var(--pink); }
-    .section-intro h2 {
-      font-size: clamp(40px, 6.5vw, 96px);
+      gap: 14px;
+      padding: 20px 38px;
+      background: var(--bg-dark);
+      color: var(--bg);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
       font-weight: 500;
-      line-height: 1;
-      letter-spacing: -0.03em;
-      max-width: 980px;
+      transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border: 1px solid var(--bg-dark);
     }
-    .section-intro h2 em { font-style: italic; color: var(--pink); }
-    .section-intro-sub {
-      margin-top: 24px;
-      font-size: 19px;
-      color: var(--text-soft);
-      max-width: 600px;
+    .hero-cta:hover {
+      background: transparent;
+      color: var(--bg-dark);
+    }
+    .hero-cta::after {
+      content: '→';
+      font-size: 14px;
+      transition: transform 0.4s ease;
+      letter-spacing: 0;
+    }
+    .hero-cta:hover::after { transform: translateX(6px); }
+
+    /* SECTION DIVIDER */
+    .ornament {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      color: var(--champagne);
+    }
+    .ornament-line {
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.5;
+    }
+    .ornament-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px;
+      font-style: italic;
     }
 
-    /* SERVICES */
-    .services {
-      max-width: 1320px;
+    /* PHILOSOPHY — single luxurious quote */
+    .philosophy {
+      padding: 140px 40px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 0 24px 100px;
+      text-align: center;
     }
-    .services-grid {
+    .philosophy .small-caps {
+      margin-bottom: 56px;
+      color: var(--champagne);
+    }
+    .philosophy-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(32px, 4.2vw, 64px);
+      line-height: 1.15;
+      letter-spacing: -0.012em;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .philosophy-quote em { font-style: italic; color: var(--champagne); }
+    .philosophy-attr {
+      margin-top: 56px;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 17px;
+      color: var(--text-soft);
+    }
+
+    /* SERVICES — list, no cards */
+    .services {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 60px 40px 140px;
+    }
+    .section-label {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .services-list {
+      border-top: 1px solid var(--hairline);
+    }
+    .svc-row {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-    .svc-card {
-      background: var(--bg-card);
-      border: 1px solid var(--hairline);
-      border-radius: 32px;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-      min-height: 320px;
-      transition: all 0.4s ease;
+      grid-template-columns: 80px 1fr 2fr 40px;
+      gap: 40px;
+      align-items: center;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--hairline);
+      cursor: pointer;
       position: relative;
-      overflow: hidden;
+      transition: padding 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .svc-card::after {
+    .svc-row::before {
       content: '';
       position: absolute;
-      bottom: -60px; right: -60px;
-      width: 200px; height: 200px;
-      background: var(--pink);
-      border-radius: 50%;
-      filter: blur(80px);
+      inset: 0 -40px;
+      background: var(--bg-dark);
       opacity: 0;
       transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: -1;
     }
-    .svc-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--pink);
+    .svc-row:hover { padding-left: 24px; padding-right: 24px; }
+    .svc-row:hover .svc-num { color: var(--champagne); }
+    .svc-row:hover .svc-arrow { transform: translateX(8px); color: var(--champagne); }
+    .svc-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--text-muted);
+      transition: color 0.4s ease;
     }
-    .svc-card:hover::after { opacity: 0.12; }
-    .svc-meta { color: var(--pink); position: relative; z-index: 1; }
-    .svc-title {
-      font-size: clamp(32px, 3.5vw, 48px);
-      font-weight: 500;
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      position: relative;
-      z-index: 1;
+    .svc-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 400;
+      letter-spacing: -0.012em;
+      line-height: 1.1;
     }
     .svc-copy {
-      font-size: 18px;
       color: var(--text-soft);
-      flex: 1;
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      line-height: 1.4;
-      position: relative;
-      z-index: 1;
-    }
-    .svc-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 22px;
-      background: var(--bg-sage);
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 500;
-      width: fit-content;
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
-    }
-    .svc-link:hover { background: var(--pink); color: #fff; }
-    .svc-link .arrow {
-      transition: transform 0.3s ease;
-    }
-    .svc-link:hover .arrow { transform: rotate(45deg); }
-
-    /* PHILOSOPHY (sage banner) */
-    .philosophy {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0 24px 100px;
-    }
-    .philosophy-card {
-      background: var(--olive-deep);
-      color: #fff;
-      border-radius: 32px;
-      padding: 100px 64px;
-      position: relative;
-      overflow: hidden;
-    }
-    .philosophy-card::before {
-      content: '';
-      position: absolute;
-      top: -50px; right: -50px;
-      width: 360px; height: 360px;
-      background: var(--pink);
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.4;
-    }
-    .philosophy-eyebrow {
-      color: var(--pink);
-      margin-bottom: 28px;
-      position: relative;
-    }
-    .philosophy-text {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(36px, 5.5vw, 80px);
-      line-height: 1.05;
-      letter-spacing: -0.025em;
-      font-weight: 500;
-      max-width: 1100px;
-      position: relative;
-    }
-    .philosophy-text em {
-      font-style: italic;
-      color: var(--pink);
-    }
-    .philosophy-sig {
-      margin-top: 40px;
-      max-width: 540px;
-      color: #ffffffd9;
-      font-size: 17px;
+      font-size: 15px;
       line-height: 1.5;
-      position: relative;
+      max-width: 540px;
+    }
+    .svc-arrow {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      color: var(--text-muted);
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      justify-self: end;
     }
 
-    /* TESTIMONIALS */
-    .testimonials {
-      max-width: 1320px;
+    /* ATELIER — small block with details */
+    .atelier {
+      max-width: 1280px;
       margin: 0 auto;
-      padding: 0 24px 100px;
+      padding: 0 40px 140px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
     }
-    .testimonials-grid {
+    .atelier-image {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      filter: grayscale(0.3) contrast(1.05);
+    }
+    .atelier-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+    }
+    .atelier-text .small-caps { color: var(--champagne); margin-bottom: 24px; }
+    .atelier-text h2 {
+      font-size: clamp(36px, 4vw, 60px);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.012em;
+      margin-bottom: 32px;
+    }
+    .atelier-text h2 em { font-style: italic; }
+    .atelier-text p {
+      font-size: 17px;
+      color: var(--text-soft);
+      line-height: 1.6;
+      max-width: 460px;
+      margin-bottom: 24px;
+    }
+    .atelier-meta {
+      margin-top: 40px;
+      padding-top: 32px;
+      border-top: 1px solid var(--hairline);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    .atelier-meta-item { display: flex; flex-direction: column; gap: 6px; }
+    .atelier-meta-item .small-caps { margin: 0; color: var(--text-muted); }
+    .atelier-meta-item .val {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      letter-spacing: -0.005em;
+    }
+
+    /* CONTACT — centered, restrained */
+    .contact {
+      background: var(--bg-dark);
+      color: var(--bg);
+      padding: 140px 40px 80px;
+      text-align: center;
+    }
+    .contact .small-caps { color: var(--champagne); margin-bottom: 40px; }
+    .contact h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 7vw, 112px);
+      font-weight: 300;
+      line-height: 0.98;
+      letter-spacing: -0.018em;
+      margin-bottom: 56px;
+    }
+    .contact h2 em { font-style: italic; color: var(--champagne); }
+
+    .contact-grid {
+      max-width: 1080px;
+      margin: 0 auto 80px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      gap: 48px;
+      padding-top: 56px;
+      border-top: 1px solid rgba(250, 247, 242, 0.18);
     }
-    .t-card {
-      background: var(--bg-card);
-      border: 1px solid var(--hairline);
-      border-radius: 28px;
-      padding: 32px;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
+    .contact-item { display: flex; flex-direction: column; gap: 10px; align-items: center; }
+    .contact-item .small-caps { color: rgba(184, 153, 104, 0.85); margin: 0; }
+    .contact-item .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.005em;
+      color: var(--bg);
     }
-    .t-stars { color: var(--yellow); font-size: 16px; letter-spacing: 0.06em; }
-    .t-text {
-      font-family: 'Playfair Display', serif;
-      font-size: 19px;
-      line-height: 1.4;
-      font-style: italic;
-      letter-spacing: -0.01em;
-      flex: 1;
-    }
-    .t-author {
-      padding-top: 16px;
-      border-top: 1px solid var(--hairline);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .t-name { font-weight: 500; }
-    .t-role { color: var(--text-muted); }
+    .contact-item a:hover { color: var(--champagne); transition: color 0.4s; }
 
-    /* CONTACT */
-    .contact {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 0 24px 24px;
-    }
-    .contact-card {
-      background: var(--bg-card);
-      border: 1px solid var(--hairline);
-      border-radius: 32px;
-      padding: 80px 64px;
-      display: grid;
-      grid-template-columns: 1.4fr 1fr;
-      gap: 80px;
-      align-items: end;
-      position: relative;
-      overflow: hidden;
-    }
-    .contact-card::before {
-      content: '';
-      position: absolute;
-      bottom: -150px; left: -100px;
-      width: 460px; height: 460px;
-      background: var(--pink);
-      border-radius: 50%;
-      filter: blur(140px);
-      opacity: 0.18;
-    }
-    .contact-eyebrow { color: var(--pink); margin-bottom: 28px; position: relative; }
-    .contact h2 {
-      font-size: clamp(48px, 7.5vw, 120px);
-      font-weight: 500;
-      line-height: 0.98;
-      letter-spacing: -0.03em;
-      position: relative;
-    }
-    .contact h2 em { font-style: italic; color: var(--pink); }
-    .contact-lead {
-      margin: 28px 0 36px;
-      font-size: 18px;
-      color: var(--text-soft);
-      max-width: 480px;
-      position: relative;
-    }
     .contact-cta {
-      background: var(--bg-dark);
-      color: #fff;
-      padding: 20px 32px;
-      border-radius: 999px;
-      font-size: 16px;
-      font-weight: 500;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      transition: all 0.3s;
-      position: relative;
-    }
-    .contact-cta:hover { background: var(--pink); }
-    .contact-cta::after { content: '↗'; transition: transform 0.3s; }
-    .contact-cta:hover::after { transform: rotate(45deg); }
-
-    .contact-details {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      padding-bottom: 12px;
-      position: relative;
-    }
-    .contact-item {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--hairline);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .contact-item:last-child { border-bottom: none; }
-    .contact-item .mono { color: var(--pink); }
-    .contact-item .value {
-      font-family: 'Playfair Display', serif;
-      font-size: 22px;
+      gap: 14px;
+      padding: 22px 44px;
+      background: var(--champagne);
+      color: var(--bg-dark);
+      font-size: 11px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
       font-weight: 500;
-      letter-spacing: -0.01em;
+      border: 1px solid var(--champagne);
+      transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .contact-item a:hover { color: var(--pink); transition: color 0.3s; }
+    .contact-cta:hover { background: transparent; color: var(--champagne); }
+    .contact-cta::after { content: '→'; font-size: 14px; }
+
     .socials {
+      margin-top: 60px;
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 6px;
+      justify-content: center;
+      gap: 28px;
     }
     .socials a {
-      padding: 7px 14px;
-      background: var(--bg-sage);
-      border-radius: 999px;
-      font-size: 13px;
-      color: var(--text);
-      transition: all 0.3s;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 242, 0.6);
+      transition: color 0.4s ease;
+      padding-bottom: 4px;
+      border-bottom: 1px solid transparent;
     }
-    .socials a:hover { background: var(--pink); color: #fff; }
+    .socials a:hover { color: var(--champagne); border-bottom-color: var(--champagne); }
 
     footer {
-      max-width: 1320px;
-      margin: 24px auto 32px;
-      padding: 0 32px;
+      max-width: 1280px;
+      margin: 80px auto 0;
+      padding-top: 32px;
+      border-top: 1px solid rgba(250, 247, 242, 0.12);
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
-      gap: 12px;
-      color: var(--text-muted);
+      gap: 14px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 242, 0.4);
+      font-family: 'JetBrains Mono', monospace;
     }
 
-    /* STICKY MOBILE CTA BAR (2026 thumb-zone pattern) */
+    /* STICKY MOBILE CTA */
     .mobile-cta-bar { display: none; }
     @media (max-width: 900px) {
       .mobile-cta-bar {
@@ -693,402 +466,268 @@
         display: flex;
         gap: 8px;
         padding: 12px 16px calc(12px + env(safe-area-inset-bottom)) 16px;
-        background: #fbf9f5e6;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: rgba(250, 247, 242, 0.92);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
         border-top: 1px solid var(--hairline);
-        animation: slide-up 0.4s 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+        animation: slide-up 0.5s 1s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
       }
       @keyframes slide-up {
         from { transform: translateY(100%); }
         to { transform: translateY(0); }
       }
-      .mobile-cta-bar .btn {
+      .mobile-cta-bar a {
         flex: 1;
         height: 56px;
-        border-radius: 999px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
-        font-size: 15px;
-        font-weight: 600;
-        font-family: 'Inter', sans-serif;
+        gap: 10px;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        font-weight: 500;
         text-decoration: none;
       }
       .mobile-cta-bar .btn-call {
-        background: var(--bg-card);
+        background: transparent;
         color: var(--text);
         border: 1px solid var(--hairline);
         flex: 0 0 56px;
-        padding: 0;
       }
       .mobile-cta-bar .btn-book {
         background: var(--bg-dark);
-        color: #fff;
+        color: var(--bg);
       }
-      .mobile-cta-bar .btn-book::after { content: '↗'; }
     }
 
-    /* MOBILE — full 2026 trends */
+    /* MOBILE OVERRIDES */
     @media (max-width: 900px) {
-      :root { --bg: #fbf9f5; }
-      body { font-size: 15px; padding-bottom: 84px; }
+      body { padding-bottom: 84px; font-size: 14px; }
       nav {
-        padding: 10px 14px 10px 18px;
-        top: max(8px, env(safe-area-inset-top));
-        width: calc(100% - 16px);
+        padding: 14px 16px;
+        grid-template-columns: 1fr auto 1fr;
+        top: max(0px, env(safe-area-inset-top));
       }
-      nav .brand { font-size: 17px; }
-      nav .brand-dot { width: 8px; height: 8px; }
-      nav .nav-links { gap: 0; }
-      nav .nav-links a:not(.nav-cta) { display: none; }
-      nav .nav-cta { padding: 10px 16px; font-size: 13px; }
-
-      .hero { padding: 84px 16px 32px; }
-      .hero-eyebrow { font-size: 11px; padding: 7px 14px; margin-bottom: 24px; }
-      .hero h1 {
-        font-size: clamp(48px, 14vw, 72px);
-        line-height: 0.95;
-        margin-bottom: 20px;
-        letter-spacing: -0.03em;
+      nav .nav-left, nav .nav-right { display: none; }
+      nav .brand { font-size: 20px; }
+      nav::before {
+        content: 'MENU';
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.22em;
       }
-      .hero-sub { font-size: 16px; margin-bottom: 28px; line-height: 1.45; }
-      .hero-actions { margin-bottom: 32px; flex-direction: column; gap: 10px; }
-      .hero-actions .btn-primary, .hero-actions .btn-ghost {
-        width: 100%;
-        justify-content: center;
-        height: 56px;
-        padding: 0 24px;
+      nav::after {
+        content: 'CZ';
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 10px;
+        letter-spacing: 0.22em;
+        justify-self: end;
       }
-      .hero-grid { grid-template-columns: 1fr; gap: 12px; }
-      .hero-img-card {
-        min-height: 0;
-        aspect-ratio: 4/5;
-        border-radius: 24px;
+
+      .hero { padding: 110px 20px 60px; }
+      .hero-eyebrow { margin-bottom: 32px; font-size: 14px; }
+      .hero h1 { font-size: clamp(48px, 14vw, 84px); margin-bottom: 40px; }
+      .hero-portrait { width: 240px; margin-bottom: 40px; }
+      .hero-tagline { font-size: 19px; margin-bottom: 40px; }
+      .hero-cta { padding: 18px 32px; font-size: 10px; letter-spacing: 0.24em; }
+
+      .ornament { padding: 0 20px; }
+
+      .philosophy { padding: 100px 24px; }
+      .philosophy .small-caps { margin-bottom: 40px; }
+      .philosophy-quote { font-size: clamp(28px, 8vw, 44px); }
+      .philosophy-attr { margin-top: 40px; font-size: 15px; }
+
+      .services { padding: 40px 24px 100px; }
+      .section-label { margin-bottom: 40px; }
+      .svc-row {
+        grid-template-columns: 36px 1fr 24px;
+        grid-template-rows: auto auto;
+        gap: 8px 16px;
+        padding: 24px 0;
       }
-      .hero-img-card img { min-height: 0; }
-      .hero-img-card::after { width: 44px; height: 44px; bottom: 16px; left: 16px; }
-      .hero-img-card .badge { top: 16px; right: 16px; font-size: 10px; padding: 8px 12px; }
-      .hero-side { gap: 12px; }
-      .hero-side-card { padding: 24px; border-radius: 24px; gap: 20px; }
-      .hero-side-quote { font-size: 19px; }
-      .hero-side-foot .num { font-size: 32px; }
+      .svc-row .svc-copy { grid-column: 2 / span 1; grid-row: 2; font-size: 14px; }
+      .svc-row:hover { padding-left: 12px; padding-right: 12px; }
+      .svc-name { font-size: 22px; }
+      .svc-arrow { grid-row: 1 / span 2; align-self: center; font-size: 20px; }
+      .svc-num { font-size: 18px; }
 
-      .trust { padding: 0 16px 48px; }
-      .trust-grid {
-        grid-template-columns: 1fr;
-        padding: 24px;
-        gap: 0;
-        border-radius: 24px;
-      }
-      .trust-item { padding: 16px 0; }
-      .trust-item:not(:last-child) {
-        border-right: none;
-        padding-right: 0;
-        border-bottom: 1px solid var(--hairline);
-      }
-      .trust-value { font-size: 44px; }
-      .trust-text { font-size: 14px; }
-
-      .section-intro { padding: 48px 16px 24px; }
-      .section-intro h2 { font-size: clamp(36px, 9vw, 56px); }
-      .section-intro-sub { font-size: 16px; margin-top: 16px; }
-
-      .services { padding: 0 16px 48px; }
-      .services-grid { grid-template-columns: 1fr; gap: 12px; }
-      .svc-card {
-        padding: 28px 24px;
-        border-radius: 24px;
-        min-height: 0;
-        gap: 16px;
-      }
-      .svc-title { font-size: clamp(28px, 7.5vw, 36px); }
-      .svc-copy { font-size: 16px; }
-      .svc-link { height: 48px; padding: 0 22px; }
-
-      .philosophy { padding: 0 16px 48px; }
-      .philosophy-card { padding: 56px 28px; border-radius: 28px; }
-      .philosophy-text { font-size: clamp(32px, 8vw, 48px); line-height: 1.05; }
-      .philosophy-sig { font-size: 15px; margin-top: 28px; }
-
-      .testimonials { padding: 0 16px 48px; }
-      .testimonials > div:first-child h2 { font-size: clamp(36px, 9vw, 56px); }
-      .testimonials-grid { grid-template-columns: 1fr; gap: 12px; }
-      .t-card { padding: 28px; border-radius: 24px; }
-      .t-text { font-size: 17px; }
-
-      .contact { padding: 0 16px 16px; }
-      .contact-card {
-        padding: 48px 28px;
+      .atelier {
+        padding: 0 24px 100px;
         grid-template-columns: 1fr;
         gap: 40px;
-        border-radius: 28px;
       }
-      .contact h2 { font-size: clamp(40px, 11vw, 64px); }
-      .contact-cta { height: 56px; padding: 0 28px; }
-      .contact-item { padding: 14px 0; }
-      .contact-item .value { font-size: 19px; }
+      .atelier-image { aspect-ratio: 4 / 4; max-width: 360px; margin: 0 auto; }
+      .atelier-text h2 { font-size: clamp(32px, 9vw, 44px); }
 
-      footer { flex-direction: column; gap: 6px; padding: 0 16px; font-size: 11px; }
+      .contact { padding: 100px 24px 60px; }
+      .contact h2 { font-size: clamp(40px, 12vw, 64px); margin-bottom: 40px; }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-top: 40px;
+        margin-bottom: 56px;
+      }
+      .contact-cta { padding: 20px 36px; font-size: 10px; }
+      .socials { flex-wrap: wrap; gap: 20px; margin-top: 40px; }
+      footer { flex-direction: column; gap: 8px; align-items: center; text-align: center; padding: 32px 24px 0; }
     }
 
-    /* SMALL MOBILE (≤375px iPhone SE / Mini) */
     @media (max-width: 380px) {
-      .hero h1 { font-size: clamp(40px, 13vw, 56px); }
-      .section-intro h2, .testimonials > div:first-child h2 { font-size: 32px; }
-      .philosophy-card { padding: 48px 24px; }
-      .contact-card { padding: 40px 24px; }
+      .hero h1 { font-size: clamp(40px, 13vw, 60px); }
+      .hero-portrait { width: 200px; }
     }
   </style>
 </head>
 <body>
 
 <nav>
+  <div class="nav-left">
+    <a class="nav-link" href="#sluzby">Služby</a>
+    <a class="nav-link" href="#atelier">Atelier</a>
+  </div>
   <a href="#top" class="brand">
-    <span class="brand-dot"></span>
-    Červinka Cosmetics
+    Červinka
+    <span class="brand-sub">Cosmetics · Vrchlabí</span>
   </a>
-  <div class="nav-links">
-    <a href="#sluzby">Služby</a>
-    <a href="#reference">Reference</a>
-    <a href="#kontakt">Kontakt</a>
-    <a class="nav-cta" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
-      <span class="dot"></span>
-      Rezervovat
-    </a>
+  <div class="nav-right">
+    <a class="nav-link" href="#kontakt">Kontakt</a>
+    <a class="nav-link" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">Rezervovat</a>
   </div>
 </nav>
 
 <section class="hero" id="top">
-  <span class="hero-eyebrow mono">Od 2018 · Vrchlabí, Krkonoše</span>
-  <h1>Vaše krása<br>začíná <em>zde.</em></h1>
-  <p class="hero-sub">Diskrétní studio ve Vrchlabí. Permanentní make-up, mezoterapie a péče o pleť pro ženy, které vědí, co chtějí.</p>
-  <div class="hero-actions">
-    <a class="btn-primary" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">Rezervovat termín</a>
-    <a class="btn-ghost" href="#sluzby">Naše služby</a>
+  <div class="hero-eyebrow">Maison fondée en 2018</div>
+  <h1><em>Maison</em> <span class="thin">de</span><br>la <em>beauté.</em></h1>
+  <div class="hero-portrait">
+    <img src="https://images.squarespace-cdn.com/content/v1/648347cae7de887c45e98e38/4ebf3f9a-de33-464d-8adc-087200f29e3b/VAL_1512.jpg" alt="Červinka Cosmetics">
   </div>
-
-  <div class="hero-grid">
-    <div class="hero-img-card">
-      <span class="badge">Otevřeno na rezervaci</span>
-      <img src="https://images.squarespace-cdn.com/content/v1/648347cae7de887c45e98e38/4ebf3f9a-de33-464d-8adc-087200f29e3b/VAL_1512.jpg" alt="Červinka Cosmetics">
-    </div>
-    <div class="hero-side">
-      <div class="hero-side-card">
-        <div>
-          <div class="mono hero-side-label">Hodnocení Google</div>
-          <div class="hero-side-quote">„Profesionální, příjemná, a vždy si na vás <em>udělá čas.</em>"</div>
-        </div>
-        <div class="hero-side-foot">
-          <span class="stars">★★★★★</span>
-          <span class="num">5,0</span>
-        </div>
-      </div>
-      <div class="hero-side-card dark">
-        <div>
-          <div class="mono hero-side-label">Studio · /01</div>
-          <div class="hero-side-quote">Vrchlabí, Krkonoše.<br>Po dohodě, jen na rezervaci.</div>
-        </div>
-        <a class="btn-primary" style="background:var(--pink); padding: 14px 22px; font-size:14px;" href="tel:+420733336796">Zavolat: +420 733 336 796</a>
-      </div>
-    </div>
-  </div>
+  <p class="hero-tagline">Soukromý atelier ve Vrchlabí.<br>Permanentní make-up, mezoterapie a péče o pleť.<br><em>Pro ženy, které vědí, co chtějí.</em></p>
+  <a class="hero-cta" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">Rezervovat termín</a>
 </section>
 
-<section class="trust">
-  <div class="trust-grid">
-    
-    <div class="trust-item">
-      <span class="trust-value">5,0</span>
-      <div class="trust-text">
-        <div class="mono trust-label">Hodnocení</div>
-        <div class="trust-sub">Google · 142 recenzí</div>
-      </div>
-    </div>
-    
-
-    <div class="trust-item">
-      <span class="trust-value">8 let</span>
-      <div class="trust-text">
-        <div class="mono trust-label">Praxe</div>
-        <div class="trust-sub">ve studiu</div>
-      </div>
-    </div>
-    
-
-    <div class="trust-item">
-      <span class="trust-value">2 400+</span>
-      <div class="trust-text">
-        <div class="mono trust-label">Klientky</div>
-        <div class="trust-sub">v Krkonoších</div>
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-<section class="section-intro">
-  <span class="section-eyebrow mono">Filozofie · /02</span>
-  <h2>Moderní kosmetika<br>s <em>něžnou</em> péčí.</h2>
-  <p class="section-intro-sub">Diskrétní studio. Soukromí, čas a péče bez kompromisu. Pro ženy, které vědí, co chtějí, a vědí, že to mají mít jen jednou, dobře.</p>
-</section>
-
-<section class="services" id="sluzby">
-  <div class="services-grid">
-    
-        <article class="svc-card">
-          <div class="svc-meta">
-            <span class="mono">01 · Obočí · Linky · Rty</span>
-          </div>
-          <h3 class="svc-title">Permanentní make-up</h3>
-          <p class="svc-copy">Probudíte se připravená. Na roky.</p>
-          <a class="svc-link" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
-            Rezervovat
-            <span class="arrow">↗</span>
-          </a>
-        </article>
-        
-
-        <article class="svc-card">
-          <div class="svc-meta">
-            <span class="mono">02 · Hluboká regenerace pleti</span>
-          </div>
-          <h3 class="svc-title">Mezoterapie</h3>
-          <p class="svc-copy">Drobné injekce, velký rozdíl.</p>
-          <a class="svc-link" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
-            Rezervovat
-            <span class="arrow">↗</span>
-          </a>
-        </article>
-        
-
-        <article class="svc-card">
-          <div class="svc-meta">
-            <span class="mono">03 · Hloubková péče bez bolesti</span>
-          </div>
-          <h3 class="svc-title">Kyslíková terapie</h3>
-          <p class="svc-copy">Pleť, která zase dýchá a září zevnitř.</p>
-          <a class="svc-link" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
-            Rezervovat
-            <span class="arrow">↗</span>
-          </a>
-        </article>
-        
-
-        <article class="svc-card">
-          <div class="svc-meta">
-            <span class="mono">04 · Diskrétně, beze stopy</span>
-          </div>
-          <h3 class="svc-title">Odstranění tetování & fibromů</h3>
-          <p class="svc-copy">Cesta zpět. Hladce, beze stopy.</p>
-          <a class="svc-link" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
-            Rezervovat
-            <span class="arrow">↗</span>
-          </a>
-        </article>
-        
-  </div>
-</section>
+<div class="ornament">
+  <span class="ornament-line"></span>
+  <span class="ornament-mark">✦</span>
+  <span class="ornament-line"></span>
+</div>
 
 <section class="philosophy">
-  <div class="philosophy-card">
-    <div class="mono philosophy-eyebrow">Co děláme jinak · /03</div>
-    <div class="philosophy-text">
-      <em>Soukromí.</em> Čas. Péče <em>bez kompromisu.</em>
-    </div>
-    <p class="philosophy-sig">Žádné spěchání. Žádné kompromisy. Žádné dvě klientky najednou. Jen vy, váš termín a ruka, která ví, co dělá.</p>
+  <div class="small-caps">Philosophie · I</div>
+  <p class="philosophy-quote">
+    Soukromí. Čas. <em>Péče bez kompromisu.</em>
+  </p>
+  <p class="philosophy-attr">— Atelier Červinka</p>
+</section>
+
+<div class="ornament">
+  <span class="ornament-line"></span>
+  <span class="ornament-mark">✦</span>
+  <span class="ornament-line"></span>
+</div>
+
+<section class="services" id="sluzby">
+  <div class="section-label small-caps">Les Services · II</div>
+  <div class="services-list">
+    
+        <a class="svc-row" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
+          <span class="svc-num">I</span>
+          <span class="svc-name">Permanentní make-up</span>
+          <span class="svc-copy">Obočí, oční linky a rty, které vás nezklamou ráno ani večer.</span>
+          <span class="svc-arrow" aria-hidden="true">→</span>
+        </a>
+        
+
+        <a class="svc-row" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
+          <span class="svc-num">II</span>
+          <span class="svc-name">Mezoterapie</span>
+          <span class="svc-copy">Drobné injekce, velký rozdíl. Pleť, která zná svůj věk a nejde to po ní vidět.</span>
+          <span class="svc-arrow" aria-hidden="true">→</span>
+        </a>
+        
+
+        <a class="svc-row" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
+          <span class="svc-num">III</span>
+          <span class="svc-name">Kyslíková terapie</span>
+          <span class="svc-copy">Hloubková péče bez bolesti. Pleť, která zase dýchá a září zevnitř.</span>
+          <span class="svc-arrow" aria-hidden="true">→</span>
+        </a>
+        
+
+        <a class="svc-row" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">
+          <span class="svc-num">IV</span>
+          <span class="svc-name">Odstranění tetování & fibromů</span>
+          <span class="svc-copy">Diskrétně, beze stopy. Profesionální postup, vždy v soukromí.</span>
+          <span class="svc-arrow" aria-hidden="true">→</span>
+        </a>
+        
   </div>
 </section>
 
-<section class="testimonials" id="reference">
-  <div style="max-width: 1320px; margin: 0 auto 60px;">
-    <span class="section-eyebrow mono">Reference · /04</span>
-    <h2 style="font-size: clamp(40px, 6vw, 88px); font-weight: 500; line-height: 1; letter-spacing: -0.03em; margin-top: 24px;">
-      Co o nás říkají <em>klientky.</em>
-    </h2>
+<section class="atelier" id="atelier">
+  <div class="atelier-image">
+    <img src="https://images.squarespace-cdn.com/content/v1/648347cae7de887c45e98e38/4ebf3f9a-de33-464d-8adc-087200f29e3b/VAL_1512.jpg" alt="Atelier Červinka">
   </div>
-  <div class="testimonials-grid">
-    
-    <article class="t-card">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-text">Výsledek, jaký jsem ani nečekala. Diskrétní studio a paní Červinka má cit, jakému se nedá konkurovat.</p>
-      <div class="t-author">
-        <span class="t-name">Klára M.</span>
-        <span class="mono t-role">Trutnov</span>
+  <div class="atelier-text">
+    <div class="small-caps">L'Atelier · III</div>
+    <h2>Soukromý <em>atelier</em><br>v srdci Krkonoš.</h2>
+    <p>Studio přijímá pouze jednu klientku v daný čas. Žádné spěchání, žádné dvě klientky najednou. Jen vy, váš termín a ruka, která ví, co dělá.</p>
+    <p>Příchody jsou výhradně po předchozí rezervaci.</p>
+    <div class="atelier-meta">
+      <div class="atelier-meta-item">
+        <span class="small-caps">Lokalita</span>
+        <span class="val">Vrchlabí, Krkonoše</span>
       </div>
-    </article>
-    
-
-    <article class="t-card">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-text">Po deseti letech zkoušení různých studií jsem konečně našla domov. PMU obočí drží roky.</p>
-      <div class="t-author">
-        <span class="t-name">Veronika S.</span>
-        <span class="mono t-role">Vrchlabí</span>
+      <div class="atelier-meta-item">
+        <span class="small-caps">Otevřeno</span>
+        <span class="val">Po dohodě</span>
       </div>
-    </article>
-    
-
-    <article class="t-card">
-      <div class="t-stars">★★★★★</div>
-      <p class="t-text">Profesionální, příjemná, a vždy si na vás udělá čas. Doporučuji každé.</p>
-      <div class="t-author">
-        <span class="t-name">Markéta P.</span>
-        <span class="mono t-role">Špindlerův Mlýn</span>
-      </div>
-    </article>
-    
+    </div>
   </div>
 </section>
 
 <section class="contact" id="kontakt">
-  <div class="contact-card">
-    <div>
-      <div class="mono contact-eyebrow">Kontakt · /05</div>
-      <h2>Pojďme se<br><em>poznat.</em></h2>
-      <p class="contact-lead">Rezervujte termín online nebo nám napište. Odpovídáme do 24 hodin.</p>
-      <a class="contact-cta" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">Vybrat termín online</a>
+  <div class="small-caps">Le Contact · IV</div>
+  <h2>Pojďme se <em>poznat.</em></h2>
+  <a class="contact-cta" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">Rezervovat termín</a>
+
+  <div class="contact-grid">
+    <div class="contact-item">
+      <span class="small-caps">Téléphone</span>
+      <a class="value" href="tel:+420733336796">+420 733 336 796</a>
     </div>
-    <div class="contact-details">
-      <div class="contact-item">
-        <span class="mono">Telefon</span>
-        <a class="value" href="tel:+420733336796">+420 733 336 796</a>
-      </div>
-      <div class="contact-item">
-        <span class="mono">Email</span>
-        <a class="value" href="mailto:info@cervinkacosmetics.cz">info@cervinkacosmetics.cz</a>
-      </div>
-      <div class="contact-item">
-        <span class="mono">Studio</span>
-        <span class="value">Vrchlabí, Krkonoše</span>
-      </div>
-      <div class="contact-item">
-        <span class="mono">Sledujte</span>
-        <div class="socials">
-          <a href="https://www.instagram.com/cervinkacosmetics/" target="_blank">Instagram</a>
-          <a href="https://www.facebook.com/cervinkacosmetics" target="_blank">Facebook</a>
-          <a href="https://www.tiktok.com/@cervinkacosmetics" target="_blank">TikTok</a>
-        </div>
-      </div>
+    <div class="contact-item">
+      <span class="small-caps">Courriel</span>
+      <a class="value" href="mailto:info@cervinkacosmetics.cz">info@cervinkacosmetics.cz</a>
+    </div>
+    <div class="contact-item">
+      <span class="small-caps">Atelier</span>
+      <span class="value">Vrchlabí, Krkonoše</span>
     </div>
   </div>
+
+  <div class="socials">
+    <a href="https://www.instagram.com/cervinkacosmetics/" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/cervinkacosmetics" target="_blank">Facebook</a>
+    <a href="https://www.tiktok.com/@cervinkacosmetics" target="_blank">TikTok</a>
+  </div>
+
+  <footer>
+    <span>© MMXXVI Červinka Cosmetics</span>
+    <span>Tous droits réservés</span>
+    <span>Vrchlabí, ČR</span>
+  </footer>
 </section>
 
-<footer>
-  <span class="mono">© 2026 Červinka Cosmetics</span>
-  <span class="mono">Vrchlabí, Krkonoše, ČR</span>
-  <span class="mono">Made with Inspiration</span>
-</footer>
-
-<!-- Sticky mobile CTA bar (thumb-zone optimized 2026) -->
+<!-- Sticky mobile CTA -->
 <div class="mobile-cta-bar" role="navigation" aria-label="Rychlé akce">
-  <a class="btn btn-call" href="tel:+420733336796" aria-label="Zavolat">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <a class="btn-call" href="tel:+420733336796" aria-label="Zavolat">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
     </svg>
   </a>
-  <a class="btn btn-book" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">Rezervovat termín</a>
+  <a class="btn-book" href="https://cervinkacosmetics.snippet.myfox.cz" target="_blank">Rezervovat</a>
 </div>
 
 </body>
