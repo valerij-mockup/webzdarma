@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Silence Beauty — Kosmetický salon, Praha</title>
+<meta name="description" content="Kosmetický salon Praha. Hloubkové čištění, OxyJet, permanentní make-up, mezoterapie. 4,9/5 z 312 recenzí.">
+<meta name="theme-color" content="#f4f0ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#2b2722" media="(prefers-color-scheme: dark)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" fetchpriority="high">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f4f0ea;
+  --bg-2:#ebe5dc;
+  --ink:#2b2722;
+  --ink-soft:#5a534b;
+  --line:#d9d1c4;
+  --accent:#3a4a3a;
+  --accent-soft:#cfd6c8;
+  --warm:#c9a98a;
+  --paper:#fbf8f3;
+  --serif:"Cormorant Garamond","Times New Roman",serif;
+  --sans:"Inter",system-ui,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*,*::before,*::after { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+html,body { margin:0; padding:0; background:var(--bg); color:var(--ink); font-family:var(--sans); font-weight:400; line-height:1.55; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-x:hidden; overscroll-behavior-y:none; }
+img { max-width:100%; display:block; }
+a { color:inherit; text-decoration:none; touch-action:manipulation; }
+button { font:inherit; cursor:pointer; border:0; background:none; color:inherit; touch-action:manipulation; }
+h1,h2,h3,h4 { font-family:var(--serif); font-weight:400; letter-spacing:-0.01em; margin:0; text-wrap:balance; }
+p { margin:0; text-wrap:pretty; }
+@supports (padding:max(0px)) { body { padding-bottom:env(safe-area-inset-bottom); } }
+@media (prefers-reduced-motion:reduce) {
+  *,*::before,*::after { animation-duration:0.01ms !important; transition-duration:0.01ms !important; scroll-behavior:auto !important; }
+}
+
+.wrap { max-width:1280px; margin:0 auto; padding:0 32px; }
+.eyebrow { font-family:var(--mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-soft); }
+
+/* NAV */
+nav.top { position:sticky; top:0; z-index:30; backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); background:rgba(244,240,234,.85); border-bottom:1px solid var(--line); padding-top:env(safe-area-inset-top); }
+nav.top .row { display:flex; align-items:center; justify-content:space-between; height:72px; }
+.logo { font-family:var(--serif); font-size:24px; letter-spacing:0.02em; display:flex; align-items:center; gap:10px; }
+.logo svg { width:22px; height:22px; }
+.nav-links { display:flex; gap:32px; font-size:14px; color:var(--ink-soft); }
+.nav-links a:hover { color:var(--ink); }
+.btn { display:inline-flex; align-items:center; gap:10px; padding:12px 22px; border-radius:999px; font-size:14px; font-weight:500; transition:all .25s ease; min-height:44px; }
+.btn.primary { background:var(--ink); color:var(--paper); }
+.btn.primary:hover { background:var(--accent); }
+.btn.ghost { border:1px solid var(--line); color:var(--ink); }
+.btn.ghost:hover { background:var(--paper); }
+.btn .arrow { width:14px; height:14px; display:inline-block; border-right:1.5px solid currentColor; border-top:1.5px solid currentColor; transform:rotate(45deg); margin-left:2px; }
+
+/* HERO */
+.hero { padding:80px 0 100px; position:relative; overflow:hidden; }
+.hero-grid { display:grid; grid-template-columns:1.05fr 0.95fr; gap:72px; align-items:end; }
+.hero h1 { font-size:clamp(56px,7vw,104px); line-height:0.95; letter-spacing:-0.02em; }
+.hero h1 em { font-style:italic; color:var(--accent); }
+.hero .lede { margin-top:36px; max-width:440px; color:var(--ink-soft); font-size:17px; }
+.hero .cta-row { display:flex; gap:14px; align-items:center; margin-top:36px; flex-wrap:wrap; }
+.trust { display:flex; align-items:center; gap:14px; margin-top:48px; font-size:13px; color:var(--ink-soft); flex-wrap:wrap; }
+.stars { color:#d4a55a; letter-spacing:2px; font-size:14px; }
+.avatars { display:flex; }
+.avatars span { width:32px; height:32px; border-radius:50%; border:2px solid var(--bg); margin-left:-10px; background-size:cover; background-position:center; }
+.avatars span:first-child { margin-left:0; background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&q=80'); }
+.avatars span:nth-child(2) { background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80'); }
+.avatars span:nth-child(3) { background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&q=80'); }
+.avatars span:nth-child(4) { background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&q=80'); }
+
+.hero-art { position:relative; aspect-ratio:4/5; border-radius:8px; overflow:hidden; background:var(--bg-2); }
+.hero-art img { width:100%; height:100%; object-fit:cover; filter:contrast(1.04) saturate(0.95); }
+.hero-badge { position:absolute; right:-24px; bottom:80px; width:140px; height:140px; border-radius:50%; background:var(--paper); display:flex; align-items:center; justify-content:center; text-align:center; font-family:var(--serif); font-size:14px; line-height:1.2; padding:16px; box-shadow:0 12px 40px rgba(0,0,0,.08); transform:rotate(-6deg); }
+.hero-badge::before { content:""; position:absolute; inset:8px; border:1px solid var(--line); border-radius:50%; }
+.hero-badge strong { display:block; font-size:11px; font-family:var(--mono); font-weight:400; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+
+/* MARQUEE */
+.marquee { border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:18px 0; overflow:hidden; background:var(--paper); }
+.marquee-track { display:flex; gap:60px; white-space:nowrap; animation:scroll 50s linear infinite; font-family:var(--serif); font-size:22px; color:var(--ink-soft); }
+.marquee-track > span { display:flex; align-items:center; gap:60px; flex-shrink:0; }
+.dot { width:6px; height:6px; background:var(--warm); border-radius:50%; display:inline-block; flex-shrink:0; }
+@keyframes scroll { from {transform:translateX(0)} to {transform:translateX(-50%)} }
+
+/* SECTIONS */
+section { padding:120px 0; }
+.sec-head { display:flex; align-items:end; justify-content:space-between; gap:40px; margin-bottom:64px; }
+.sec-head h2 { font-size:clamp(40px,5vw,72px); line-height:1; max-width:680px; }
+.sec-head h2 em { font-style:italic; color:var(--accent); }
+.sec-head .meta { flex-shrink:0; text-align:right; max-width:320px; color:var(--ink-soft); font-size:15px; }
+
+/* PROMISE / BENTO */
+.bento { display:grid; grid-template-columns:1.4fr 1fr 1fr; grid-template-rows:auto auto; gap:14px; }
+.bento .card { border-radius:8px; padding:32px; min-height:280px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:space-between; border:1px solid var(--line); }
+.bento .card.dark { background:var(--ink); color:var(--paper); border-color:var(--ink); background-size:cover; background-position:center; background-blend-mode:multiply; }
+.bento .card.dark::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(43,39,34,0.45) 0%, rgba(43,39,34,0.85) 100%); z-index:0; }
+.bento .card.dark > * { position:relative; z-index:1; }
+.bento .card.warm { background:var(--warm); color:var(--ink); border-color:transparent; }
+.bento .card.paper { background:var(--paper); }
+.bento .card.tall { grid-row:span 2; min-height:574px; }
+.bento .card.image { background-size:cover; background-position:center; color:#fff; position:relative; }
+.bento .card.image::before { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(58,74,58,0.2) 0%, rgba(58,74,58,0.85) 100%); z-index:0; }
+.bento .card.image > * { position:relative; z-index:1; }
+.bento .card .num { font-family:var(--serif); font-size:64px; line-height:1; opacity:.3; }
+.bento .card h3 { font-size:28px; line-height:1.1; margin-top:auto; }
+.bento .card p { font-size:14px; opacity:.75; margin-top:12px; }
+.bento .card.dark p, .bento .card.image p { opacity:.8; }
+
+/* SERVICES */
+.services { background:var(--paper); }
+.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.svc { background:var(--bg); border:1px solid var(--line); border-radius:8px; overflow:hidden; display:flex; flex-direction:column; transition:transform .25s ease, box-shadow .25s ease; }
+.svc:hover { transform:translateY(-3px); box-shadow:0 16px 40px rgba(0,0,0,.06); }
+.svc-img { aspect-ratio:4/3; background-size:cover; background-position:center; position:relative; display:flex; align-items:flex-end; padding:18px; }
+.svc-img::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.2) 100%); }
+.svc-img .tag { position:relative; z-index:1; font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; background:var(--paper); padding:6px 10px; border-radius:999px; }
+.svc-body { padding:24px 24px 28px; display:flex; flex-direction:column; flex:1; }
+.svc-body h3 { font-size:26px; line-height:1.1; }
+.svc-body p { margin-top:10px; color:var(--ink-soft); font-size:14px; flex:1; }
+.svc-body .row { display:flex; justify-content:space-between; align-items:center; margin-top:20px; padding-top:16px; border-top:1px solid var(--line); }
+.svc-body .price { font-family:var(--serif); font-size:22px; }
+.svc-body .price small { font-size:12px; color:var(--ink-soft); font-family:var(--sans); margin-left:4px; }
+.svc-body .more { font-size:13px; color:var(--accent); display:inline-flex; gap:6px; align-items:center; padding:8px 0; }
+.svc-body .more::after { content:"→"; }
+
+/* QUOTE BAND */
+.quote-band { background:var(--ink); color:var(--paper); padding:140px 0; position:relative; overflow:hidden; }
+.quote-band .wrap { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.quote-band h2 { font-size:clamp(40px,5vw,68px); line-height:1.05; font-style:italic; color:var(--paper); }
+.quote-band h2 span { color:var(--warm); }
+.quote-band p { margin-top:24px; color:rgba(251,248,243,.65); max-width:380px; }
+.quote-band .player { aspect-ratio:1; border-radius:8px; background-size:cover; background-position:center; position:relative; }
+.quote-band .player::after { content:""; position:absolute; inset:0; background:rgba(58,74,58,.55); border-radius:8px; }
+.quote-band .player::before { content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:0; height:0; border-left:22px solid var(--paper); border-top:14px solid transparent; border-bottom:14px solid transparent; margin-left:6px; z-index:1; }
+.quote-band .player .name { position:absolute; left:24px; bottom:24px; font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:rgba(255,255,255,.7); z-index:1; }
+
+/* TEAM */
+.team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+.team-card { display:flex; flex-direction:column; gap:18px; }
+.team-photo { aspect-ratio:4/5; border-radius:8px; background-size:cover; background-position:center top; position:relative; overflow:hidden; }
+.team-card h3 { font-size:24px; }
+.team-card .role { font-family:var(--mono); font-size:11px; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-soft); margin-top:4px; }
+.team-card .contact { margin-top:8px; font-size:14px; color:var(--ink-soft); display:flex; flex-direction:column; gap:4px; }
+.team-card .contact a { padding:4px 0; }
+.team-card .contact a:hover { color:var(--ink); }
+
+/* REVIEWS */
+.reviews { background:var(--paper); }
+.rev-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+.rev { background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:24px; display:flex; flex-direction:column; gap:18px; min-height:280px; }
+.rev .head { display:flex; align-items:center; gap:12px; }
+.rev .head .av { width:40px; height:40px; border-radius:50%; background-size:cover; background-position:center; flex-shrink:0; }
+.rev:nth-child(1) .av { background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&h=80&fit=crop&q=80'); }
+.rev:nth-child(2) .av { background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&q=80'); }
+.rev:nth-child(3) .av { background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=80&h=80&fit=crop&q=80'); }
+.rev:nth-child(4) .av { background-image:url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&h=80&fit=crop&q=80'); }
+.rev .head .who { font-size:14px; font-weight:500; }
+.rev .head .who small { display:block; font-weight:400; color:var(--ink-soft); font-size:12px; margin-top:2px; }
+.rev p { font-family:var(--serif); font-size:18px; line-height:1.4; }
+.rev .src { margin-top:auto; font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-soft); }
+
+/* OFFER */
+.offer-card { background:var(--accent); color:var(--paper); border-radius:12px; padding:64px; display:grid; grid-template-columns:1.1fr 1fr; gap:48px; align-items:center; position:relative; overflow:hidden; }
+.offer-card::before { content:""; position:absolute; right:-100px; top:-100px; width:300px; height:300px; border-radius:50%; background:rgba(201,169,138,.15); }
+.offer-card h2 { font-size:48px; line-height:1.05; color:var(--paper); }
+.offer-card h2 em { font-style:italic; color:var(--warm); }
+.offer-card p { margin-top:18px; color:rgba(251,248,243,.75); max-width:420px; }
+.offer-card .code { margin-top:24px; display:inline-flex; align-items:center; gap:12px; padding:10px 16px; border:1px dashed rgba(251,248,243,.4); border-radius:6px; font-family:var(--mono); font-size:13px; letter-spacing:0.15em; }
+.offer-card .code strong { color:var(--paper); }
+.offer-card .img { aspect-ratio:1; border-radius:8px; background-size:cover; background-position:center; position:relative; }
+.offer-card .img::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.3) 100%); border-radius:8px; }
+.offer-card .scarcity { display:flex; align-items:center; gap:8px; margin-top:14px; font-size:13px; color:rgba(251,248,243,.7); }
+.offer-card .scarcity .pulse { width:8px; height:8px; background:var(--warm); border-radius:50%; animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% {opacity:1} 50% {opacity:.4} }
+
+/* CONTACT */
+.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+.contact-info { display:grid; grid-template-columns:1fr 1fr; gap:32px 24px; margin-top:40px; }
+.contact-info .item .lbl { font-family:var(--mono); font-size:10px; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:8px; }
+.contact-info .item .val { font-family:var(--serif); font-size:22px; line-height:1.2; }
+.contact-info .item .val small { display:block; font-family:var(--sans); font-size:13px; color:var(--ink-soft); margin-top:4px; }
+.contact-info .item a { padding:6px 0; display:inline-block; }
+.map { aspect-ratio:1.1; border-radius:8px; background:repeating-linear-gradient(0deg, transparent 0 40px, rgba(58,74,58,.06) 40px 41px), repeating-linear-gradient(90deg, transparent 0 40px, rgba(58,74,58,.06) 40px 41px), var(--bg-2); position:relative; border:1px solid var(--line); }
+.map .pin { position:absolute; left:48%; top:46%; width:14px; height:14px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 6px rgba(58,74,58,.18); }
+.map .pin::after { content:"Silence Beauty"; position:absolute; left:24px; top:-4px; background:var(--paper); padding:4px 10px; border-radius:4px; font-size:11px; font-family:var(--mono); letter-spacing:0.1em; text-transform:uppercase; white-space:nowrap; border:1px solid var(--line); }
+
+/* FOOTER */
+footer { background:var(--ink); color:rgba(251,248,243,.6); padding:80px 0 32px; margin-top:120px; }
+footer .grid { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:48px; }
+footer .logo { color:var(--paper); font-size:36px; margin-bottom:18px; }
+footer h4 { color:var(--paper); font-family:var(--sans); font-weight:500; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:18px; }
+footer ul { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:14px; }
+footer ul a { padding:4px 0; display:inline-block; }
+footer ul a:hover { color:var(--paper); }
+footer .bar { margin-top:64px; padding-top:24px; border-top:1px solid rgba(251,248,243,.1); display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:12px; font-family:var(--mono); letter-spacing:0.05em; }
+
+/* STICKY MOBILE CTA — 2026 thumb-zone */
+.mobile-cta { display:none; }
+@media (max-width:900px) {
+  .mobile-cta {
+    position:fixed; bottom:0; left:0; right:0; z-index:100;
+    display:flex; gap:8px;
+    padding:12px 16px calc(12px + env(safe-area-inset-bottom)) 16px;
+    background:rgba(244,240,234,.94);
+    backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px);
+    border-top:1px solid var(--line);
+    animation:slide-up 0.5s 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) backwards;
+  }
+  @keyframes slide-up { from {transform:translateY(100%)} to {transform:translateY(0)} }
+  .mobile-cta a { flex:1; height:56px; display:inline-flex; align-items:center; justify-content:center; gap:10px; font-size:14px; font-weight:500; border-radius:999px; }
+  .mobile-cta .call { background:var(--paper); color:var(--ink); border:1px solid var(--line); flex:0 0 56px; }
+  .mobile-cta .book { background:var(--ink); color:var(--paper); }
+  .mobile-cta .book::after { content:"→"; }
+  body { padding-bottom:80px !important; }
+}
+
+/* MOBILE LAYOUT */
+@media (max-width:900px) {
+  .wrap { padding:0 20px; }
+  nav.top { background:rgba(244,240,234,.96); }
+  nav.top .row { height:60px; }
+  .logo { font-size:20px; }
+  .nav-links { display:none; }
+  nav.top .btn.primary { padding:10px 18px; font-size:13px; }
+
+  .hero { padding:48px 0 64px; }
+  .hero-grid { grid-template-columns:1fr; gap:48px; }
+  .hero h1 { font-size:clamp(48px,12vw,72px); }
+  .hero .lede { font-size:16px; margin-top:24px; }
+  .hero .cta-row { margin-top:28px; }
+  .hero .cta-row .btn { flex:1; justify-content:center; min-height:52px; }
+  .trust { margin-top:32px; }
+  .hero-art { aspect-ratio:4/4; }
+  .hero-badge { width:110px; height:110px; right:-12px; bottom:24px; font-size:12px; padding:14px; }
+  .hero-badge strong { font-size:10px; }
+
+  .marquee-track { font-size:18px; gap:40px; }
+  .marquee-track > span { gap:40px; }
+
+  section { padding:72px 0; }
+  .sec-head { flex-direction:column; align-items:start; gap:16px; margin-bottom:40px; }
+  .sec-head .meta { text-align:left; }
+
+  .bento { grid-template-columns:1fr; }
+  .bento .card.tall { grid-row:auto; min-height:280px; }
+  .bento .card { padding:28px; }
+
+  .svc-grid { grid-template-columns:1fr; gap:16px; }
+
+  .quote-band { padding:80px 0; }
+  .quote-band .wrap { grid-template-columns:1fr; gap:48px; }
+  .quote-band .player { aspect-ratio:16/10; }
+
+  .team-grid { grid-template-columns:1fr; gap:32px; }
+
+  .rev-grid { grid-template-columns:1fr; gap:14px; }
+  .rev { min-height:0; }
+
+  .offer-card { grid-template-columns:1fr; padding:40px 28px; gap:32px; }
+  .offer-card h2 { font-size:36px; }
+  .offer-card .img { aspect-ratio:16/10; }
+
+  .contact-grid { grid-template-columns:1fr; gap:40px; }
+  .contact-info { grid-template-columns:1fr; gap:24px; margin-top:28px; }
+  .map { aspect-ratio:4/5; max-height:60vh; }
+
+  footer { padding:64px 0 24px; margin-top:80px; }
+  footer .grid { grid-template-columns:1fr; gap:32px; }
+  footer .logo { font-size:28px; }
+  footer .bar { flex-direction:column; align-items:flex-start; }
+}
+
+@media (max-width:380px) {
+  .hero h1 { font-size:clamp(40px,11vw,56px); }
+  .offer-card h2 { font-size:28px; }
+  .sec-head h2 { font-size:32px; }
+}
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap row">
+    <a href="#" class="logo">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg>
+      Silence Beauty
+    </a>
+    <div class="nav-links">
+      <a href="#services">Služby</a>
+      <a href="#about">O salonu</a>
+      <a href="#team">Tým</a>
+      <a href="#reviews">Recenze</a>
+      <a href="#contact">Kontakt</a>
+    </div>
+    <a href="#book" class="btn primary">Rezervovat <span class="arrow"></span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Praha · od 2018</div>
+      <h1 style="margin-top:24px">Tichá péče.<br><em>Viditelný výsledek.</em></h1>
+      <p class="lede">Pleť, která dýchá. Procedura, která respektuje váš čas. První konzultace je u nás vždy zdarma — protože dobré rozhodnutí potřebuje klid.</p>
+      <div class="cta-row">
+        <a href="#book" class="btn primary">Rezervovat termín <span class="arrow"></span></a>
+        <a href="#services" class="btn ghost">Prohlédnout služby</a>
+      </div>
+      <div class="trust">
+        <div class="avatars"><span></span><span></span><span></span><span></span></div>
+        <div>
+          <div class="stars">★★★★★ <span style="color:var(--ink);font-family:var(--mono);font-size:11px;letter-spacing:.1em">4,9 / 312 recenzí</span></div>
+          <div style="margin-top:2px;font-size:12px">Hodnoceno na Google &amp; Trustindex</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85" alt="Silence Beauty" loading="eager" fetchpriority="high">
+      <div class="hero-badge"><div><strong>Certifikát</strong>Lege Artis<br>2018 – 2026</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Hloubkové čištění <span class="dot"></span> OxyJet kyslíková terapie <span class="dot"></span> Mezoterapie <span class="dot"></span> Permanentní make-up <span class="dot"></span> Laminace obočí <span class="dot"></span> Chemický peeling <span class="dot"></span> Anti-age ošetření <span class="dot"></span></span>
+    <span>Hloubkové čištění <span class="dot"></span> OxyJet kyslíková terapie <span class="dot"></span> Mezoterapie <span class="dot"></span> Permanentní make-up <span class="dot"></span> Laminace obočí <span class="dot"></span> Chemický peeling <span class="dot"></span> Anti-age ošetření <span class="dot"></span></span>
+  </div>
+</div>
+
+<!-- PROMISE / BENTO -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Moderní kosmetika. <em>Lidský přístup.</em></h2>
+      <div class="meta">Pracujeme s technologiemi, které byste čekali na klinikách — v atmosféře, kterou byste hledali doma.</div>
+    </div>
+    <div class="bento">
+      <div class="card dark tall" style="background-image:url('https://images.unsplash.com/photo-1559599101-f09722fb4948?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=85')">
+        <div></div>
+        <div>
+          <div class="num">01</div>
+          <h3>Diagnostika pleti je vždy první krok.</h3>
+          <p>Žádné šablony. Plán ošetření sestavujeme podle toho, co skutečně vidíme — ne podle toho, co máme v ceníku.</p>
+        </div>
+      </div>
+      <div class="card warm">
+        <div class="num">02</div>
+        <div>
+          <h3>Bez bolesti. Bez jehly.</h3>
+          <p>OxyJet pulzním tlakem dostane účinné látky tam, kam patří. Žádná rekonvalescence.</p>
+        </div>
+      </div>
+      <div class="card paper">
+        <div class="num">03</div>
+        <div>
+          <h3>312 pětihvězdičkových recenzí.</h3>
+          <p>Číslo, které stálo 7 let trpělivé práce.</p>
+        </div>
+      </div>
+      <div class="card image" style="background-image:url('https://images.unsplash.com/photo-1596178060810-72660d61c8db?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=85')">
+        <div></div>
+        <div>
+          <h3>Konzultace zdarma.</h3>
+          <p>30 minut, nezávazně. Rozhodnete se v klidu.</p>
+        </div>
+      </div>
+      <div class="card paper">
+        <div class="num">04</div>
+        <div>
+          <h3>Doporučení domácí péče v ceně.</h3>
+          <p>Bez prodeje za desítky tisíc — stačí 3 produkty.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Co u nás <em>najdete</em></h2>
+      <div class="meta">Šest nejžádanějších procedur. Kompletní ceník na vyžádání nebo při konzultaci.</div>
+    </div>
+    <div class="svc-grid">
+      
+        <article class="svc">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=85')">
+            <span class="tag">01 · Pleť</span>
+          </div>
+          <div class="svc-body">
+            <h3>Hloubkové čištění</h3>
+            <p>Diagnóza, peeling, čištění, masáž, maska. Pro pleť, která se zacpává nebo ztratila tón.</p>
+            <div class="row">
+              <span class="price">1 480 Kč<small>/ 75 min</small></span>
+              <a href="#book" class="more">Rezervovat</a>
+            </div>
+          </div>
+        </article>
+        
+
+        <article class="svc">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1614108265869-ce3b2d57bea2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=85')">
+            <span class="tag">02 · Anti-age</span>
+          </div>
+          <div class="svc-body">
+            <h3>OxyJet kyslíková terapie</h3>
+            <p>Bez jehel. Bez bolesti. Výsledek po prvním sezení a vidět ho budou i ostatní.</p>
+            <div class="row">
+              <span class="price">2 290 Kč<small>/ 60 min</small></span>
+              <a href="#book" class="more">Rezervovat</a>
+            </div>
+          </div>
+        </article>
+        
+
+        <article class="svc">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1583241800698-9c2e0c87d49e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=85')">
+            <span class="tag">03 · Obočí</span>
+          </div>
+          <div class="svc-body">
+            <h3>Permanentní make-up</h3>
+            <p>Microblading, pudrové obočí, oční linky. Včetně korekce po 4–6 týdnech.</p>
+            <div class="row">
+              <span class="price">od 5 900 Kč<small>/ 180 min</small></span>
+              <a href="#book" class="more">Rezervovat</a>
+            </div>
+          </div>
+        </article>
+        
+
+        <article class="svc">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1620916566398-39f1143ab7be?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=85')">
+            <span class="tag">04 · Regenerace</span>
+          </div>
+          <div class="svc-body">
+            <h3>Mezoterapie Dermapen</h3>
+            <p>Mikrojehličkování s koktejlem vitamínů. Stimuluje vlastní kolagen.</p>
+            <div class="row">
+              <span class="price">2 800 Kč<small>/ 60 min</small></span>
+              <a href="#book" class="more">Rezervovat</a>
+            </div>
+          </div>
+        </article>
+        
+
+        <article class="svc">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1612442058775-9a6c2c2a3acf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=85')">
+            <span class="tag">05 · Pleť</span>
+          </div>
+          <div class="svc-body">
+            <h3>Chemický peeling</h3>
+            <p>Pigmentace, jizvičky po akné, jemné vrásky. Kúra 3 sezení s viditelným výsledkem.</p>
+            <div class="row">
+              <span class="price">1 890 Kč<small>/ 60 min</small></span>
+              <a href="#book" class="more">Rezervovat</a>
+            </div>
+          </div>
+        </article>
+        
+
+        <article class="svc">
+          <div class="svc-img" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=85')">
+            <span class="tag">06 · Detail</span>
+          </div>
+          <div class="svc-body">
+            <h3>Laminace obočí & řas</h3>
+            <p>Tvar, který vydrží 6–8 týdnů. 45 minut pro denní ráno bez make-upu.</p>
+            <div class="row">
+              <span class="price">990 Kč<small>/ 45 min</small></span>
+              <a href="#book" class="more">Rezervovat</a>
+            </div>
+          </div>
+        </article>
+        
+    </div>
+    <div style="text-align:center;margin-top:48px">
+      <a href="#book" class="btn ghost">Zobrazit kompletní ceník <span class="arrow"></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BAND -->
+<section class="quote-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:rgba(251,248,243,.55)">Klientka · 8. měsíc těhotenství</div>
+      <h2 style="margin-top:24px">„Druhý den po ošetření — a moje pleť je <span>dokonalá.</span> Žádné zarudnutí, žádné svědění."</h2>
+      <p>Anna K. přišla s extrémně citlivou pletí. Před ošetřením následovala 20minutová konzultace s otázkami — ne se sliby.</p>
+    </div>
+    <div class="player" style="background-image:url('https://images.unsplash.com/photo-1532926381893-7542290edf1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=85')">
+      <span class="name">// video · 0:42</span>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Tým, který vás <em>uvidí</em></h2>
+      <div class="meta">Tři specialistky, čtrnáct let praxe, jeden přístup: méně slibů, více pozornosti.</div>
+    </div>
+    <div class="team-grid">
+      
+        <div class="team-card">
+          <div class="team-photo" style="background-image:url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=85')"></div>
+          <div>
+            <h3>Markéta Veselá</h3>
+            <div class="role">Vedoucí kosmetička</div>
+          </div>
+          <div class="contact">
+            <a href="mailto:marketa@silence-beauty.cz">marketa@silence-beauty.cz</a>
+            <a href="tel:+420777100200">+420 777 100 200</a>
+          </div>
+        </div>
+        
+
+        <div class="team-card">
+          <div class="team-photo" style="background-image:url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=85')"></div>
+          <div>
+            <h3>Lucie Horáková</h3>
+            <div class="role">Specialistka — permanent</div>
+          </div>
+          <div class="contact">
+            <a href="mailto:lucie@silence-beauty.cz">lucie@silence-beauty.cz</a>
+            <a href="tel:+420777100201">+420 777 100 201</a>
+          </div>
+        </div>
+        
+
+        <div class="team-card">
+          <div class="team-photo" style="background-image:url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=85')"></div>
+          <div>
+            <h3>Tereza Nováková</h3>
+            <div class="role">Anti-age & přístroje</div>
+          </div>
+          <div class="contact">
+            <a href="mailto:tereza@silence-beauty.cz">tereza@silence-beauty.cz</a>
+            <a href="tel:+420777100202">+420 777 100 202</a>
+          </div>
+        </div>
+        
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>312 klientek. <em>Jeden důvod.</em></h2>
+      <div class="meta"><div class="stars">★★★★★</div><div style="margin-top:6px">4,9 na Google. Recenze čteme, odpovídáme — i na ty kritické.</div></div>
+    </div>
+    <div class="rev-grid">
+      
+        <div class="rev">
+          <div class="head">
+            <div class="av"></div>
+            <div class="who">Anna K.<small>· Praha 7</small></div>
+          </div>
+          <p>„Salon jsem navštívila poprvé a kdyby to bylo v mých možnostech, byla bych tam neustále."</p>
+          <div class="src">Google · ★★★★★</div>
+        </div>
+        
+
+        <div class="rev">
+          <div class="head">
+            <div class="av"></div>
+            <div class="who">Olga M.<small>· OxyJet</small></div>
+          </div>
+          <p>„Žádné injekce, žádná bolest, žádná rekonvalescence — jen pleť plná kyslíku."</p>
+          <div class="src">Google · ★★★★★</div>
+        </div>
+        
+
+        <div class="rev">
+          <div class="head">
+            <div class="av"></div>
+            <div class="who">Petra Š.<small>· Permanent</small></div>
+          </div>
+          <p>„Konečně obočí, ke kterému ráno nepotřebuji ani zrcadlo."</p>
+          <div class="src">Trustindex · ★★★★★</div>
+        </div>
+        
+
+        <div class="rev">
+          <div class="head">
+            <div class="av"></div>
+            <div class="who">Jana B.<small>· Mezoterapie</small></div>
+          </div>
+          <p>„Doporučili mi 3 produkty domů, ne 30. Tomu říkám poctivost."</p>
+          <div class="src">Google · ★★★★★</div>
+        </div>
+        
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section>
+  <div class="wrap">
+    <div class="offer-card">
+      <div>
+        <div class="eyebrow" style="color:var(--warm)">Limitovaná akce · květen</div>
+        <h2 style="margin-top:18px">První ošetření <em>se slevou 15 %</em></h2>
+        <p>Pro nové klientky. Konzultace zdarma, sleva platí na první proceduru dle vašeho výběru.</p>
+        <div class="code">KÓD&nbsp;&nbsp;<strong>SILENCE15</strong></div>
+        <div class="scarcity"><span class="pulse"></span>Platí do 31. 5. 2026 · zbývá 14 termínů</div>
+        <div style="margin-top:28px"><a href="#book" class="btn" style="background:var(--paper);color:var(--ink)">Rezervovat se slevou <span class="arrow"></span></a></div>
+      </div>
+      <div class="img" style="background-image:url('https://images.unsplash.com/photo-1556228852-80b6e5eeff06?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=85')"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">Kontakt</div>
+        <h2 style="font-size:clamp(40px,5vw,68px);margin-top:18px">Napište nám.<br><em>Odpovídáme do hodiny.</em></h2>
+        <p style="margin-top:18px;color:var(--ink-soft);max-width:420px">Nejistá ohledně volby procedury? Nechte nám zprávu — doporučení dostanete dřív, než si stihnete uvařit kávu.</p>
+        <div class="contact-info">
+          <div class="item"><div class="lbl">Adresa</div><div class="val">Vinohradská 42<small>120 00 Praha 2</small></div></div>
+          <div class="item"><div class="lbl">Telefon</div><div class="val"><a href="tel:+420777100200">+420 777 100 200</a><small>WhatsApp i SMS</small></div></div>
+          <div class="item"><div class="lbl">E-mail</div><div class="val"><a href="mailto:studio@silence-beauty.cz">studio@silence-beauty.cz</a></div></div>
+          <div class="item"><div class="lbl">Otevírací doba</div><div class="val">Po – Pá · 9–19<small>So · 9–14  ·  Ne zavřeno</small></div></div>
+        </div>
+        <div style="display:flex;gap:14px;margin-top:36px;flex-wrap:wrap">
+          <a href="#book" class="btn primary">Rezervovat termín <span class="arrow"></span></a>
+          <a href="tel:+420777100200" class="btn ghost">Zavolat</a>
+        </div>
+      </div>
+      <div class="map"><div class="pin"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="logo"><svg viewBox="0 0 24 24" fill="none" style="width:24px;height:24px;display:inline-block;vertical-align:middle;margin-right:8px"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1"/><circle cx="12" cy="12" r="4" fill="currentColor"/></svg> Silence Beauty</div>
+        <p style="font-size:14px;max-width:320px">Kosmetický salon, který si zakládá na klidu, přesnosti a tichém respektu k vaší pleti.</p>
+      </div>
+      <div>
+        <h4>Navigace</h4>
+        <ul><li><a href="#services">Služby</a></li><li><a href="#about">O salonu</a></li><li><a href="#team">Tým</a></li><li><a href="#reviews">Recenze</a></li><li><a href="#contact">Kontakt</a></li></ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul><li>Vinohradská 42</li><li>120 00 Praha 2</li><li><a href="tel:+420777100200">+420 777 100 200</a></li><li><a href="mailto:studio@silence-beauty.cz">studio@silence-beauty.cz</a></li></ul>
+      </div>
+      <div>
+        <h4>Sledujte</h4>
+        <ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">TikTok</a></li><li><a href="#">Google Reviews</a></li></ul>
+      </div>
+    </div>
+    <div class="bar">
+      <div>© 2026 SILENCE BEAUTY · IČO 12345678</div>
+      <div>VŠECHNA PRÁVA VYHRAZENA</div>
+    </div>
+  </div>
+</footer>
+
+<!-- Sticky mobile CTA — 2026 thumb-zone -->
+<div class="mobile-cta" role="navigation" aria-label="Rychlé akce">
+  <a class="call" href="tel:+420777100200" aria-label="Zavolat">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+    </svg>
+  </a>
+  <a class="book" href="#book">Rezervovat termín</a>
+</div>
+
+</body>
+</html>
